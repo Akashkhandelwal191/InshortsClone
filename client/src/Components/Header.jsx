@@ -1,8 +1,9 @@
 import { AppBar, Toolbar, styled} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useState } from "react";
+import {useContext } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import SidebarList from "./SiderbarList";
+import { InshortsDataContext } from "../Context/ContextProvider";
 
 const StyledHeader = styled(AppBar)`
   background: #fff;
@@ -31,9 +32,9 @@ const Header = () => {
   const url =
     "https://assets.inshorts.com/website_assets/images/logo_inshorts.png";
 
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const {Show,SetShow} = useContext(InshortsDataContext);  
+  const handleClose = () => SetShow(false);
+  const handleShow = () => SetShow(true);
 
   return (
     <>
@@ -44,11 +45,11 @@ const Header = () => {
         </Toolbar>
       </StyledHeader>
       <Sidebar
-        show={show}
+        show={Show}
         onHide={handleClose}
         name="Enable body scrolling"
         scroll={true}
-        backdrop={false}
+        backdrop={true}
       >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Categories</Offcanvas.Title>

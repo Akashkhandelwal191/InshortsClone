@@ -34,11 +34,12 @@ const DataList = [
 
 const SidebarList = () => {
    
-   const {SetData,SetElement,setLoading}  = useContext(InshortsDataContext);
+   const {SetData,SetElement,setLoading,SetShow}  = useContext(InshortsDataContext);
 
   const getName = async (e) =>{
 
     // console.log(e.target.innerText);
+    SetShow(false);
     SetElement(e.target.innerText);
     setLoading(true);
     const response = await InshortsNewsFetch(e.target.innerText);
