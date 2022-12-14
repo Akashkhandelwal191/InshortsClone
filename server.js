@@ -24,10 +24,10 @@ const PORT = process.env.PORT || 8000;
 
 // const username = process.env.DB_USERNAME;
 // const password = process.env.DB_PASSWORD;
-// if(process.env.NODE_ENV === 'production')
-// {
-//      app.use(express.static("client/build"));
-// }
+if(process.env.NODE_ENV === 'production')
+{
+     app.use(express.static("client/build"));
+}
 
 app.use(express.static(path.join(__dirname, "./client/build")));
 app.get("*", function (_, res) {
