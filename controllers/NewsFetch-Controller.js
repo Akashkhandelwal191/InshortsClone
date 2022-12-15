@@ -1,5 +1,7 @@
 
-import News from '../models/new-schema.js';
+// import News from '../models/new-schema.js';
+
+const News = require('../models/new-schema.js');
 
 const NewsFetchControllers = async (req,res) =>{
   
@@ -18,4 +20,5 @@ const NewsFetchControllers = async (req,res) =>{
 }
 
 
-export default NewsFetchControllers;
+// export default NewsFetchControllers;
+module.exports = {NewsFetchControllers};

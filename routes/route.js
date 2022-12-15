@@ -1,12 +1,17 @@
-import express from 'express';
+const express = require('express');
+// import express from 'express';
 
 const route = express.Router();
 
-import NewsFetchControllers from '../controllers/NewsFetch-Controller.js';
-import getNews from '../controllers/InshortsNewsFetch.js';
+// import NewsFetchControllers from '../controllers/NewsFetch-Controller.js';
 
-route.get('/news',NewsFetchControllers);
+const {NewsFetchControllers} = require('../controllers/NewsFetch-Controller.js');
+// import getNews from '../controllers/InshortsNewsFetch.js';
+const getNews = require('../controllers/InshortsNewsFetch.js');
+
+// route.get('/news',NewsFetchControllers);
 
 route.get('/inshortsNews',getNews);
 
-export default route;
+// export default route;
+module.exports = route;

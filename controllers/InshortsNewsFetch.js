@@ -1,6 +1,6 @@
-import inshorts from 'inshorts-news-api';
+// import inshorts from 'inshorts-news-api';
 
-
+const inshorts = require('inshorts-news-api');
 
 
 const getNews = (req,res) =>{
@@ -35,6 +35,7 @@ const getNews = (req,res) =>{
 }
 
 
-export default getNews;
+// export default getNews;
+module.exports = getNews;
 
 
